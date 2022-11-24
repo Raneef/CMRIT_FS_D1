@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>test</title>
+        <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy" rel="stylesheet">
+        <style>
+            html{
+                width: 100%;
+                height: 100%;
+            }
+            div.main{
+                background-color: rgb(142, 223, 142);
+                width: 100vw;
+                height: 100vh;
+                display: grid;
+                justify-content: center;
+                align-items: center;
+                
+            }
+            div.sub{
+                background-color: rgb(249, 252, 69);
+                border: 2px solid wheat;
+                height: 80vh;
+                width: 80vw;
+                display: grid;
+                place-items: center;
+            }
+            .im{
+                height: 30vh;
+                width: 20vw;
+                margin: auto;
+            }
+            h1.first{
+                font-family: Luckiest Guy;
+                color: rgb(255, 255, 255);
+                -webkit-text-stroke: 1px black;
+                font-size: 40px;
+                text-shadow: 0 0 10px black;
+                text-align: center;
+            }
+            h1.sec{
+                font-family: Luckiest Guy;
+                color: rgb(0, 0, 0);
+                -webkit-text-stroke: 1px rgb(190, 189, 189);
+                font-size: 40px;
+                text-shadow: 0 0 10px black;
+                text-align: center;
+            }
+            button{
+                background-color: greenyellow;
+                font-family: Luckiest Guy;
+                font-size: large;
+                box-shadow: 0 0 10px black;
+            }
+            input[type=text]{
+                width: 20vw;
+                border: 3px solid black;
+                border-radius: 8px;
+                padding: 8px;
+                box-shadow: 0 0 10px black;
+            }
+            
+            
+
+        </style>
+    </head>
+    <body>
+        <div class="main">
+           <h1 class="first">What does your name say about your personality?</h1> 
+           <div class="sub">
+            <h1 class="sec">Enter your name</h2>
+            <input type="text" id="nameid" placeholder="Enter here">
+            <div class="im">
+                <img width="100%" height="100%" src="p1.jpg" alt="na" class="imgchange">
+            </div>
+            <button>Click me!</button>
+           </div>
+        </div>
+    </body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+<script>
+ $(document).ready(function(){
+    $('button').click(function(){
+   const name = $('#nameid').val();
+//    alert(name);
+   $('.imgchange').attr('src',`https://joeschmoe.io/api/v1/${name}`);
+   const b = $('.imgchange');
+   console.log(b);
+
+  });
+ });
+</script>
+</html>
